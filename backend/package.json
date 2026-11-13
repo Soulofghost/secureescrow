@@ -1,0 +1,28 @@
+{
+  "name": "secureescrow",
+  "version": "1.0.0",
+  "description": "Smart Contract-Based Conditional Milestone Escrow & Arbitration Platform",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "test": "node --test tests/**/*.test.js"
+  },
+  "keywords": [
+    "escrow",
+    "solidity",
+    "smart-contracts",
+    "milestones",
+    "arbitration",
+    "fintech",
+    "ethereum"
+  ],
+  "author": "Alvin MS (@Soulofghost)",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.2",
+    "cors": "^2.8.5",
+    "ethers": "^6.13.2"
+  }
+}

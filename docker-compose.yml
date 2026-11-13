@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  secureescrow:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: secureescrow-app
+    ports:
+      - "8009:8009"
+    environment:
+      - PORT=8009
+      - SECUREESCROW_DB=/app/backend/data/secureescrow.db
+    volumes:
+      - escrow_data:/app/backend/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:8009/api/v1/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+volumes:
+  escrow_data:
+    driver: local
